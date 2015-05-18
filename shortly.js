@@ -28,6 +28,7 @@ function(req, res) {
   res.render('index');
 });
 
+
 app.get('/create', 
 function(req, res) {
   res.render('index');
@@ -77,6 +78,47 @@ function(req, res) {
 /************************************************************/
 // Write your authentication routes here
 /************************************************************/
+
+app.get('/login', 
+function(req, res) {
+  res.render('login');
+});
+
+app.get('/signup', 
+function(req, res) {
+  res.render('signup');
+});
+
+app.post('/signup', function(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+
+  console.log(util.checkUser(username))
+  new User({username: username}).fetch().then(function(found){
+    if (util.checkUser(username)) {
+      console.log("username is taken");
+    } else {
+      var user = new User({
+        username: username,
+        password: password
+      })
+      user.save().then(function(newUser) {
+        Users.add(newUser);
+        res.send(200)
+      });
+      
+      console.log('Attempting to save')
+    }
+  })
+    // } else {
+    //   util.getUsername(username, function(err, name){
+    //     // leaving out if err
+
+    //   })
+})
+
+
+
 
 
 
