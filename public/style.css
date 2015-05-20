@@ -31,18 +31,6 @@ h1 {
   float: left;
 }
 
-.navigation .logout {
-  float: right;
-}
-
-.navigation li a , .logout {
-  width: 100px;
-  height: 20px;
-  line-height: 20px;
-  padding: 10px;
-  display: block;
-  text-align: center;
-}
 
 .navigation li a:hover {
   background-color: #ddd;
@@ -93,6 +81,19 @@ h1 {
   font-size: 12px;
 }
 
+.navigation li a , .logout {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
+
+#class{
+  padding: 0px;
+}
+
 .link .info {
   margin-left: 55px;
 }
@@ -134,4 +135,14 @@ form input[type=text], form input[type=password] {
 
 .creator .message {
   clear: both;
+}
+
+#hello{
+  float: right;
+
+}
+
+#hello :hover{
+  background-color: pink;
+  
 }
